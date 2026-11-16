@@ -1,0 +1,51 @@
+{
+    "name": "prestashopheaven/runtime-mail",
+    "description": "Module mails in the shop's mail theme: layouts for PrestaShop's mail theme generator (actionListMailThemes), and sending a module template for one shop and language with every failure logged.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George van Engers",
+            "email": "vanengers@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrestaShopHeaven\\Runtime\\Mail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PrestaShopHeaven\\Runtime\\Mail\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
+        "prestashopheaven": {
+            "kind": "runtime",
+            "use-when": "A module sends mails that should look like the shop's own mails, or sends any module template per shop and language without breaking the request on a mail error.",
+            "keywords": [
+                "mail",
+                "email",
+                "mail-theme",
+                "actionListMailThemes",
+                "layout",
+                "twig",
+                "modern",
+                "classic",
+                "Mail::send",
+                "multistore",
+                "language"
+            ],
+            "integration-tested": [
+                "src/MailThemeLayouts.php",
+                "src/ModuleMailer.php"
+            ]
+        }
+    }
+}
